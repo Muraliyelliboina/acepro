@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MA Shop</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .container {
+            padding: 20px;
+        }
+        .product {
+            display: inline-block;
+            width: 30%;
+            margin: 10px;
+            padding: 10px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .product img {
+            max-width: 100%;
+            height: auto;
+        }
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        form input, form button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>MA Shop</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#register">Register/Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="home" class="container">
+        <h2>Welcome to MA Shop</h2>
+        <p>Your favorite place for the latest tech products.</p>
+    </div>
+
+    <div id="products" class="container">
+        <h2>Product Catalog</h2>
+        <div class="product">
+            <img src=" https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/w/z/u/-original-imagtxvtmxpagdpn.jpeg?q=70" alt="Product 1">
+            <h3>OnePlus Nord CE 3 Lite 5G</h3>
+            <p>Latest Mobile.</p>
+        </div>
+        <div class="product">
+            <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/computer/z/x/3/-original-imagtz2bphyyfsbq.jpeg?q=70" alt="Product 2">
+            <h3>HP omen Ai powered AMD RYZEN 7 octacore 78040 HS</h3>
+            <p>popular laptop </p>
+        </div>
+        <div class="product">
+            <img src="https://rukminim2.flixcart.com/image/312/312/xif0q/air-conditioner-new/8/e/8/-original-imahf3pvbuwryffy.jpeg?q=70" alt="Product 3">
+            <h3>VOLTAS 2024 Model 1.5 ton 5star split inverter AC- white</h3>
+            <p>Latest airconditioner</p>
+        </div>
+    </div>
+
+    <div id="about" class="container">
+        <h2>About Us</h2>
+        <p>MA Shop is dedicated to bringing you the latest and greatest in technology. We are passionate about tech and aim to provide the best shopping experience for tech enthusiasts.</p>
+    </div>
+
+    <div id="contact" class="container">
+        <h2>Contact Us</h2>
+        <p>Have questions? Reach out to us at contact@MAshop.com or call us at +91(87654433333).</p>
+    </div>
+
+    <div id="register" class="container">
+        <h2>Register/Login</h2>
+        <form id="registrationForm">
+            <input type="text" id="username" name="username" placeholder="Username" required>
+            <input type="email" id="email" name="email" placeholder="Email" required>
+            <input type="password" id="password" name="password" placeholder="Password" required>
+            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password" required>
+            <button type="submit">Register</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('registrationForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+            var confirmPassword = document.getElementById('confirmPassword').value;
+
+            var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+            if (!emailPattern.test(email)) {
+                alert('Please enter a valid email address.');
+                return;
+            }
+
+            if (password.length < 8) {
+                alert('Password must be at least 8 characters long.');
+                return;
+            }
+
+            if (password !== confirmPassword) {
+                alert('Passwords do not match.');
+                return;
+            }
+
+            alert('Registration successful!');
+        });
+    </script>
+</body>
+</html>
